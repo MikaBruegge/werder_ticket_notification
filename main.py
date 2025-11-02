@@ -27,7 +27,7 @@ for eintrag in bestellfristen_heim:
     phase = eintrag['bestellphase'].split(",")[0]
     if compare_end_date(phase):
         #print(f"Bestellphase öffnet heute für Werder vs {eintrag['partie']} am {eintrag['spieltermin']}")
-        send_push(NTFY_TOPIC, "Bestellphase Heim begendetinnt", f"Bestellphase endet morgen für Werder vs {eintrag['partie']} am {eintrag['spieltermin']}")
+        send_push(NTFY_TOPIC, "Bestellphase Heim endet", f"Bestellphase endet morgen für Werder vs {eintrag['partie']} am {eintrag['spieltermin']}")
 
 for eintrag in bestellfristen_ausw:
     phase = eintrag['bestellphase'].split(",")[0]
