@@ -3,7 +3,7 @@ from checker import hole_bestellfristen, compare_start_date, compare_end_date
 
 
 # Dein ntfy Topic hier eintragen
-NTFY_TOPIC = "werdertickets_test"
+NTFY_TOPIC = "werdertickets_ntfctn"
 
 bestellfristen_heim = hole_bestellfristen("https://www.werder.de/tickets/maenner/heimspiele")
 bestellfristen_ausw = hole_bestellfristen("https://www.werder.de/tickets/maenner/auswaertsspiele")
