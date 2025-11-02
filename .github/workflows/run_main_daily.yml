@@ -1,0 +1,27 @@
+name: Run main.py daily
+
+on:
+  schedule:
+    # Täglich um 10:00 UTC (entspricht 11:00 Uhr deutscher Zeit im Winter)
+    - cron: "0 9 * * *"
+  workflow_dispatch:  # erlaubt manuelles Ausführen über GitHub UI
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt || true
+
+      - name: Run main.py
+        run: python main.py
